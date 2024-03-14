@@ -7,13 +7,13 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
-public class MyFrame extends JFrame {
+public class vaccineCovidGUI extends JFrame {
 
     private static JTextField genderText;
     private static JTextField dobText;
 
 
-    public MyFrame() {
+    public vaccineCovidGUI() {
         setTitle("Covid-19");
         setSize(580, 410);
 
@@ -33,14 +33,14 @@ public class MyFrame extends JFrame {
         dobText = new JTextField(20);
 
         JButton jButton = new JButton("Get Vaccine");
-        ImageIcon gifIcon2 = new ImageIcon("src/vaccine.jpg");  // เปลี่ยนเป็นพาธของไฟล์ GIF
+        ImageIcon gifIcon2 = new ImageIcon("src/vaccine.png");  // เปลี่ยนเป็นพาธของไฟล์ GIF
         JLabel gifLabel2 = new JLabel(gifIcon2);
 
         panel1.setLayout(null);
 
 
         genderLabel.setBounds(90, 150, 120, 25);
-        genderLabel.setForeground(Color.black);
+        genderLabel.setForeground(Color.yellow);
         Font font = new Font("Arial", Font.BOLD, 20);
         genderLabel.setFont(font);
 
@@ -50,7 +50,7 @@ public class MyFrame extends JFrame {
         panel1.add(genderText);
 
         dobLabel.setBounds(90, 180, 120, 25);
-        dobLabel.setForeground(Color.black);
+        dobLabel.setForeground(Color.yellow);
         dobLabel.setFont(font);
         panel1.add(dobLabel);
 
@@ -163,7 +163,7 @@ public class MyFrame extends JFrame {
 
     void vaccine(String gender, String dobStr) {
 
-        MyFrame frame = new MyFrame();
+        vaccineCovidGUI frame = new vaccineCovidGUI();
 
         try {
 
@@ -245,7 +245,7 @@ public class MyFrame extends JFrame {
     }
 
     public static void main(String[] args) throws IOException {
-        MyFrame frame = new MyFrame();
+        vaccineCovidGUI frame = new vaccineCovidGUI();
         SwingUtilities.invokeLater(() -> {
             frame.setVisible(true);
         });
